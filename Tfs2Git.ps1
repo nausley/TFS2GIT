@@ -308,7 +308,8 @@ function CleanUp
 # This is where all the fun starts...
 function Main
 {
-	CheckPath("git.cmd")
+	#CheckPath("git.cmd")
+	CheckPath("git.exe")
 	CheckPath("tf.exe")
 	CheckParameters
 	PrepareWorkspace
