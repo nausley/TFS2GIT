@@ -248,7 +248,7 @@ function Convert ([array]$ChangeSets)
 		git rm $CommitMessageFileName --cached --force		
 
 		$CommitMsg = Get-Content $CommitMessageFileName		
-		$Match = ([regex]'User: (\w+)').Match($commitMsg)
+		$Match = ([regex]'User: (\S+)').Match($commitMsg)
 		if ($UserMapping.Count -gt 0 -and $Match.Success -and $UserMapping.ContainsKey($Match.Groups[1].Value)) 
 		{	
 			$Author = $userMapping[$Match.Groups[1].Value]
